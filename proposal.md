@@ -15,42 +15,47 @@ Road potholes are a major factor contributing to vehicle damage, traffic slowdow
 - Produce visual inference outputs highlighting detected potholes.
 
 ## 4. Dataset Plan
-- **Source:** Kaggle – *Pothole Image Dataset* (approx. 5,000–10,000 images) or *India Pothole Detection Dataset*
-- **Classes:**  
-  - *Pothole*  
-  - *Normal Road*
-- **Acquisition:**  
-  - Download from Kaggle  
-  - Additional Google Street View extraction if needed  
-  - Manual annotation refinement using tools like LabelImg or Roboflow
+- **Source:** Roboflow Universe – *New Pothole Detection Dataset*  
+  https://universe.roboflow.com/smartathon/new-pothole-detection
+- **Dataset Characteristics:**
+  - Annotated road images containing potholes under varying lighting, weather, and road conditions
+  - Bounding box annotations suitable for object detection
+- **Classes:**
+  - *Pothole*
+- **Acquisition & Preparation:**
+  - Dataset download via Roboflow API
+  - Automatic train/validation/test split provided by Roboflow
+  - Optional manual inspection and refinement of annotations
+  - Export format compatible with YOLO models
 
 ## 5. Technical Approach
 ### Model Architecture
-- Base model: **YOLOv8n** or **YOLOv11n** (lightweight, fast inference)
-- Alternative: **EfficientDet‑D0** for balanced performance
+- **Primary Model:** YOLOv12 (latest YOLO architecture optimized for accuracy and speed)
+- **Weights:** Custom-trained weights (`best.pt`) from the Roboflow pothole dataset
+- **Deployment Style:** Server-side inference using Flask for real-time visualization
 
 ### Frameworks & Tools
-- **Framework:** PyTorch  
-- **Training Environment:** Google Colab (T4/L4 GPU)  
-- **Preprocessing:** Data augmentation (random crop, brightness/contrast adjust, blur, weather simulations)
+- **Deep Learning Framework:** PyTorch
+- **Detection Framework:** Ultralytics YOLO
+- **Backend:** Flask (Python)
+- **Computer Vision:** OpenCV
+- **Visualization & Annotation:** Supervision
+- **Dataset Management:** Roboflow
+- **Training Environment:** Google Colab with GPU acceleration (T4 / L4)
 
-### Pipeline Overview
-1. Dataset cleaning and augmentation  
-2. Label normalization  
-3. Train/val/test splitting  
-4. Model training with monitored metrics (mAP50, precision, recall)  
-5. Hyperparameter tuning (LR scheduling, mosaic augmentation, batch size optimization)  
-6. Inference testing and visualization
+### System Architecture
+The system follows a client–server architecture:
+- The **Flask backend** handles video ingestion, YOLOv12 inference, and annotation rendering.
+- A **web-based dashboard** displays the live video stream and detection statistics.
+- The model processes each frame, detects potholes, and overlays bounding boxes and labels before streaming the output to the client.
 
 ## 6. Expected Challenges & Mitigations
-- **Challenge:** Variability in road conditions (lighting, weather, camera angle)  
-  **Mitigation:** Extensive augmentation and using pretrained weights  
-- **Challenge:** Small or imbalanced dataset  
-  **Mitigation:** Oversampling, synthetic augmentation, and transfer learning  
-- **Challenge:** Model confusion between dark patches and potholes  
-  **Mitigation:** Add negative samples and refine annotations  
-- **Challenge:** Computational constraints  
-  **Mitigation:** Use YOLO‑nano versions and reduce input resolution
-
+- **Challenge:** Variability in road texture, lighting, and weather conditions  
+  **Mitigation:** Extensive data augmentation and transfer learning with pretrained weights
+- **Challenge:** False positives caused by shadows, oil stains, or road cracks  
+  **Mitigation:** Inclusion of hard negative samples and refinement of bounding box annotations
+- **Challenge:** Computational limitations during training or inference  
+  **Mitigation:** Use of lightweight YOLOv12 variants and reduced input resolution
+  
 ## 7. Expected Outcome
-A fully functional pothole detection model with clear performance metrics, annotated inference outputs, and a deployment‑ready pipeline applicable for road monitoring and maintenance systems.
+A fully functional pothole detection model that can detect potholes in road videos in real time and display them with bounding boxes, providing useful information for road maintenance planning and safety monitoring.
