@@ -26,8 +26,7 @@ Potholes are a common road hazard that can cause vehicle damage and increase acc
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [Demo](#demo)
-- [References](#references)s
+- [References](#references)
 
 ---
 
@@ -77,7 +76,7 @@ The training run in the notebook uses **50 epochs**, and produces:
 ## Experiments & Results
 
 ### Training Curves (50 Epochs)
-> These images are generated from `train.ipynb` and should be committed to the repo so they render on GitHub.
+> These images are generated from `train.ipynb`.
 
 ![Training Curves](images/final%20(50%20epoch)/loss_curve.png)  
 ![mAP Summary](images/final%20(50%20epoch)/map_curve.png)
@@ -101,7 +100,7 @@ Ultralytics reports and common definitions:
 | **Medium** | 0.30 | 0.57 | 0.31 |
 | **Large** | 0.49 | 0.77 | 0.55 |
 
-### Demo (Notebook Dashboard)
+### Demo
 Inference is deployed as a notebook dashboard using `ipywidgets`:
 - `pothole_detection.ipynb`
 
@@ -111,6 +110,8 @@ The dashboard supports:
 - Confidence and IoU sliders
 - On-frame labels with confidence (e.g., `pothole 0.82`)
 - Optional export of annotated output video
+
+**Demo Video:** [CSC173_Connor_Final.mp4](https://drive.google.com/drive/folders/12YFozZykcpD-kANAYplqiISvTK19Qlrz?usp=sharing)
 
 ---
 
@@ -217,11 +218,6 @@ CSC173-DeepCV-Connor/
 ├─ README.md
 └─ requirements.txt
 ```
-
----
-
-## Demo
-**Video:** [CSC173_Connor_Final.mp4](https://drive.google.com/drive/folders/12YFozZykcpD-kANAYplqiISvTK19Qlrz?usp=sharing)
 
 ---
 
