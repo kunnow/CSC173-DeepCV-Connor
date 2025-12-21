@@ -4,7 +4,6 @@
 
 **Student:** Shir Keilah Connor, 2022-5474  
 **Semester:** AY 2025-2026 Sem 1  
-**GitHub Repo:** `kunnow/CSC173-DeepCV-Connor`  
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://python.org) [![Ultralytics](https://img.shields.io/badge/Ultralytics-YOLO-orange)](https://docs.ultralytics.com) [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626)](https://jupyter.org)
 
