@@ -1,0 +1,14 @@
+# Core (training + inference)
+ultralytics
+supervision
+opencv-python
+numpy
+
+# Notebook dashboard UI
+ipywidgets
+
+# Dataset download (Roboflow export used in train.ipynb)
+roboflow
+
+# Plotting/logging support
+matplotlib
