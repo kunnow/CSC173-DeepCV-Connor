@@ -10,7 +10,7 @@
 ---
 
 ## Abstract
-Potholes are a common road hazard that can cause vehicle damage and increase accident risk, especially in areas where roads deteriorate quickly due to weather and heavy traffic. This project develops a **pothole detection system** using the **Ultralytics YOLO object detection framework** and deploys it as a **Flask-free Jupyter Notebook dashboard** for real-time demonstrations. The model is trained using the Roboflow Universe **“New pothole detection”** dataset (9,240 labeled images) [2][3]. After training for **50 epochs**, the model achieves an overall **mAP@0.50 = 0.62** and **mAP@0.50:0.95 = 0.36**, with the best performance on **large potholes** (mAP@0.50 = 0.77). The dashboard loads the trained weights (`best.pt`), runs inference on a video file or webcam stream, draws bounding boxes with confidence scores (e.g., `pothole 0.82`), and displays live statistics such as detection count and inference behavior. By packaging both training and deployment inside notebooks (`train.ipynb` and `pothole_detection.ipynb`), the project remains reproducible, presentation-ready, and aligned with course submission requirements.
+Potholes are a common road hazard that can cause vehicle damage and increase accident risk, especially in areas where roads deteriorate quickly due to weather and heavy traffic. This project develops a **pothole detection system** using the **Ultralytics YOLO object detection framework** and deploys it as a **Jupyter Notebook dashboard** for real-time demonstrations. The model is trained using the Roboflow Universe **“New pothole detection”** dataset (9,240 labeled images) [2][3]. After training for **50 epochs**, the model achieves an overall **mAP@0.50 = 0.62** and **mAP@0.50:0.95 = 0.36**, with the best performance on **large potholes** (mAP@0.50 = 0.77). The dashboard loads the trained weights (`best.pt`), runs inference on a video file or webcam stream, draws bounding boxes with confidence scores (e.g., `pothole 0.82`), and displays live statistics such as detection count and inference behavior. By packaging both training and deployment inside notebooks (`train.ipynb` and `pothole_detection.ipynb`), the entire workflow is self-contained and can be easily reproduced by others.
 
 ---
 
@@ -116,7 +116,6 @@ The dashboard supports:
 
 ## Discussion
 **Strengths**
-- Notebook-first deployment is ideal for academic submissions and live demos.
 - Results show strong performance for **medium/large potholes**, with lower performance for **small potholes** (a known challenge in detection due to fewer pixels and weaker features).
 
 **Limitations**
