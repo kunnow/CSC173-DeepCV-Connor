@@ -2,8 +2,8 @@
 **CSC173 Intelligent Systems Final Project**  
 *Mindanao State University – Iligan Institute of Technology*  
 
-**Student:** Shir Keilah Connor, 2022-5474
-**Semester:** AY 2025-2026 Sem 1
+**Student:** Shir Keilah Connor, 2022-5474  
+**Semester:** AY 2025-2026 Sem 1  
 **GitHub Repo:** `kunnow/CSC173-DeepCV-Connor`  
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue)](https://python.org) [![Ultralytics](https://img.shields.io/badge/Ultralytics-YOLO-orange)](https://docs.ultralytics.com) [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626)](https://jupyter.org)
@@ -26,7 +26,8 @@ Potholes are a common road hazard that can cause vehicle damage and increase acc
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
-- [References](#references)
+- [Demo](#demo)
+- [References](#references)s
 
 ---
 
@@ -78,7 +79,7 @@ The training run in the notebook uses **50 epochs**, and produces:
 ### Training Curves (50 Epochs)
 > These images are generated from `train.ipynb` and should be committed to the repo so they render on GitHub.
 
-![Training Curves](images/final%20(50%20epoch)/loss_curve)  
+![Training Curves](images/final%20(50%20epoch)/loss_curve.png)  
 ![mAP Summary](images/final%20(50%20epoch)/map_curve.png)
 
 ### Metrics (from `train.ipynb`)
